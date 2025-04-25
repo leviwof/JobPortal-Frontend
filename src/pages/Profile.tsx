@@ -59,7 +59,7 @@ function Profile() {
 
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('http://localhost:3000/user/update', {
+      const response = await fetch('https://jobportal-backend-3-7e5m.onrender.com/user/update', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, _id: currentUser._id }),

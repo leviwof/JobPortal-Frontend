@@ -16,8 +16,10 @@ function Login() {
     e.preventDefault();
     console.log('Submitting:', { email, password });
     setError('');
+
+    const API_URL = 'https://jobportal-backend-3-7e5m.onrender.com';
     try {
-      const response = await axios.post('http://localhost:3000/login', {
+      const response = await axios.post(`${API_URL}/login`, {
         email: email,
         password: password,
       });

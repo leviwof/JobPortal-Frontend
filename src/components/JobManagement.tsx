@@ -29,7 +29,7 @@ function JobManagement() {
 
   const fetchJobs = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/jobs', {
+      const response = await axios.get('https://jobportal-backend-3-7e5m.onrender.com/api/jobs', {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Add dummy applicant count for HR view
@@ -48,7 +48,7 @@ function JobManagement() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/jobs',
+        'https://jobportal-backend-3-7e5m.onrender.com/api/jobs',
         { title, description, company, location, salary, status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -70,7 +70,7 @@ function JobManagement() {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/jobs/${selectedJobId}`,
+        `https://jobportal-backend-3-7e5m.onrender.com/api/jobs/${selectedJobId}`,
         { title, description, company, location, salary, status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -91,7 +91,7 @@ function JobManagement() {
   // Delete job
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:3000/api/jobs/${id}`, {
+      await axios.delete(`https://jobportal-backend-3-7e5m.onrender.com/api/jobs/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setJobs(jobs.filter(job => job._id !== id));
